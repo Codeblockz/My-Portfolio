@@ -14,7 +14,7 @@ const Hero = () => {
             <span className="text-blue-600 dark:text-blue-400">Hello</span>, I'm
             <br />
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Your Name
+              Ryan Ellis
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8">
