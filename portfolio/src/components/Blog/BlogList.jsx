@@ -1,45 +1,22 @@
 import React, { useState } from 'react';
+import { getAllCategories, getCategoryInfo, searchBlogPosts } from '../../utils/contentLoader';
+import BlogPost from './BlogPost';
 
 const BlogList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedPostId, setSelectedPostId] = useState(null);
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "Building Modern Web Applications with React",
-      excerpt: "Learn the fundamentals of React and how to build scalable web applications with modern JavaScript frameworks.",
-      date: "2024-01-15",
-      category: "Technical Tutorial",
-      readTime: "8 min read"
-    },
-    {
-      id: 2,
-      title: "The Future of AI in Web Development",
-      excerpt: "Exploring how artificial intelligence is transforming the way we build and interact with web applications.",
-      date: "2024-01-10",
-      category: "AI/ML Insights",
-      readTime: "6 min read"
-    },
-    {
-      id: 3,
-      title: "Project Retrospective: Chat Application",
-      excerpt: "A detailed look at the challenges faced and lessons learned while building a real-time chat application.",
-      date: "2024-01-05",
-      category: "Project Retrospective",
-      readTime: "10 min read"
-    }
-  ];
+  const categories = getAllCategories();
+  const filteredPosts = searchBlogPosts(searchTerm, selectedCategory);
 
-  const categories = [...new Set(blogPosts.map(post => post.category))];
+  const handlePostClick = (postId) => {
+    setSelectedPostId(postId);
+  };
 
-  const filteredPosts = blogPosts.filter(post => {
-    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         post.category.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === '' || post.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  });
+  const handleClosePost = () => {
+    setSelectedPostId(null);
+  };
 
   return (
     <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -85,7 +62,7 @@ const BlogList = () => {
             <article key={post.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full text-sm font-medium">
+                  <span className={`${getCategoryInfo(post.category).color} px-3 py-1 rounded-full text-sm font-medium`}>
                     {post.category}
                   </span>
                   <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -93,9 +70,12 @@ const BlogList = () => {
                   </span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
-                  <a href={`#blog/${post.id}`}>
+                  <button
+                    onClick={() => handlePostClick(post.id)}
+                    className="text-left w-full focus:outline-none"
+                  >
                     {post.title}
-                  </a>
+                  </button>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {post.excerpt}
@@ -108,12 +88,12 @@ const BlogList = () => {
                       day: 'numeric'
                     })}
                   </span>
-                  <a
-                    href={`#blog/${post.id}`}
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200"
+                  <button
+                    onClick={() => handlePostClick(post.id)}
+                    className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200 focus:outline-none"
                   >
                     Read More →
-                  </a>
+                  </button>
                 </div>
               </div>
             </article>
@@ -137,6 +117,14 @@ const BlogList = () => {
           </a>
         </div>
       </div>
+
+      {/* Blog Post Modal */}
+      {selectedPostId && (
+        <BlogPost
+          postId={selectedPostId}
+          onClose={handleClosePost}
+        />
+      )}
     </section>
   );
 };
