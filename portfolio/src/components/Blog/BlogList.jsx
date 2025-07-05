@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const BlogList = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+
   const blogPosts = [
     {
       id: 1,
@@ -28,6 +31,16 @@ const BlogList = () => {
     }
   ];
 
+  const categories = [...new Set(blogPosts.map(post => post.category))];
+
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.category.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = selectedCategory === '' || post.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
+
   return (
     <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
@@ -40,8 +53,35 @@ const BlogList = () => {
           </p>
         </div>
 
+        {/* Search and Filter */}
+        <div className="max-w-2xl mx-auto mb-12">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex-1">
+              <input
+                type="text"
+                placeholder="Search posts..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+              />
+            </div>
+            <div className="sm:w-48">
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+              >
+                <option value="">All Categories</option>
+                {categories.map(category => (
+                  <option key={category} value={category}>{category}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
+          {filteredPosts.map((post) => (
             <article key={post.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-3">
@@ -79,6 +119,14 @@ const BlogList = () => {
             </article>
           ))}
         </div>
+
+        {filteredPosts.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500 dark:text-gray-400 text-lg">
+              No posts found matching your search criteria.
+            </p>
+          </div>
+        )}
 
         <div className="text-center mt-12">
           <a

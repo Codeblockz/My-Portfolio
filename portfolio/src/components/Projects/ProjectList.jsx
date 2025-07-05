@@ -1,41 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ProjectCard from './ProjectCard';
+import projectsData from '../../content/projects/projects.json';
 
 const ProjectList = () => {
   const [showAll, setShowAll] = useState(false);
+  const [projects, setProjects] = useState([]);
 
-  // Mock project data
-  const projects = [
-    {
-      id: 1,
-      title: "Portfolio Website",
-      description: "A modern, responsive portfolio website built with React and Tailwind CSS",
-      status: "active",
-      technologies: ["React", "Tailwind CSS", "JavaScript"],
-      githubUrl: "#",
-      demoUrl: "#"
-    },
-    {
-      id: 2,
-      title: "AI Chat Application",
-      description: "Real-time chat application with AI-powered responses",
-      status: "completed",
-      technologies: ["React", "Node.js", "OpenAI API", "Socket.io"],
-      githubUrl: "#",
-      demoUrl: "#"
-    },
-    {
-      id: 3,
-      title: "Task Management System",
-      description: "Full-stack task management application with user authentication",
-      status: "paused",
-      technologies: ["React", "Express", "MongoDB", "JWT"],
-      githubUrl: "#",
-      demoUrl: "#"
-    }
-  ];
+  useEffect(() => {
+    setProjects(projectsData.projects);
+  }, []);
 
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projects.filter(project => project.featured);
   const displayedProjects = showAll ? projects : featuredProjects;
 
   return (

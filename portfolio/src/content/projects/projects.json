@@ -1,0 +1,99 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Portfolio Website",
+      "description": "A modern, responsive portfolio website built with React and Tailwind CSS. Features dark/light mode toggle, responsive design, and dynamic content management.",
+      "status": "active",
+      "technologies": ["React", "Tailwind CSS", "JavaScript", "MDX"],
+      "githubUrl": "https://github.com/username/portfolio",
+      "demoUrl": "https://portfolio.example.com",
+      "category": "Web Development",
+      "featured": true,
+      "startDate": "2024-01-01",
+      "endDate": null,
+      "highlights": [
+        "Responsive design with mobile-first approach",
+        "Dark/light theme toggle with localStorage persistence",
+        "Dynamic content management with MDX support",
+        "Professional UI/UX design"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "AI Chat Application",
+      "description": "Real-time chat application with AI-powered responses using OpenAI API. Features real-time messaging, conversation history, and intelligent responses.",
+      "status": "completed",
+      "technologies": ["React", "Node.js", "OpenAI API", "Socket.io", "Express"],
+      "githubUrl": "https://github.com/username/ai-chat",
+      "demoUrl": "https://ai-chat.example.com",
+      "category": "AI/ML",
+      "featured": true,
+      "startDate": "2023-11-15",
+      "endDate": "2024-01-10",
+      "highlights": [
+        "Real-time bidirectional communication",
+        "AI-powered conversation responses",
+        "Conversation history and context management",
+        "Responsive chat interface"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Task Management System",
+      "description": "Full-stack task management application with user authentication, project organization, and team collaboration features.",
+      "status": "paused",
+      "technologies": ["React", "Express", "MongoDB", "JWT", "Node.js"],
+      "githubUrl": "https://github.com/username/task-manager",
+      "demoUrl": null,
+      "category": "Full-Stack",
+      "featured": true,
+      "startDate": "2023-09-01",
+      "endDate": null,
+      "highlights": [
+        "User authentication and authorization",
+        "Project and task organization",
+        "Team collaboration features",
+        "RESTful API design"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "E-commerce Platform",
+      "description": "Modern e-commerce platform with product catalog, shopping cart, payment integration, and admin dashboard.",
+      "status": "completed",
+      "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
+      "githubUrl": "https://github.com/username/ecommerce",
+      "demoUrl": "https://ecommerce.example.com",
+      "category": "Full-Stack",
+      "featured": false,
+      "startDate": "2023-06-01",
+      "endDate": "2023-08-30",
+      "highlights": [
+        "Secure payment processing with Stripe",
+        "Admin dashboard with analytics",
+        "Product catalog with search and filtering",
+        "Responsive shopping cart experience"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Weather Analytics Dashboard",
+      "description": "Data visualization dashboard for weather patterns and climate analysis using historical weather data.",
+      "status": "completed",
+      "technologies": ["Python", "Flask", "D3.js", "PostgreSQL", "Chart.js"],
+      "githubUrl": "https://github.com/username/weather-dashboard",
+      "demoUrl": "https://weather-dashboard.example.com",
+      "category": "Data Science",
+      "featured": false,
+      "startDate": "2023-04-01",
+      "endDate": "2023-05-30",
+      "highlights": [
+        "Interactive data visualizations",
+        "Historical weather data analysis",
+        "RESTful API for weather data",
+        "Responsive dashboard design"
+      ]
+    }
+  ]
+}
