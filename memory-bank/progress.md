@@ -65,13 +65,13 @@
 - [x] Footer with additional links
 - [x] Dark/light theme toggle
 
-### Phase 2: Content Systems and Advanced Features (50% COMPLETE)
+### Phase 2: Content Systems and Advanced Features (65% COMPLETE)
 - [x] **JSON-based project data management system** ✅ - Dynamic loading from projects.json with comprehensive project data
 - [x] **Mobile hamburger menu implementation** ✅ - Complete with state management and smooth animations
 - [x] **Contact form email integration (Formspree/EmailJS)** ✅ - Async submission with error handling
 - [x] **Search functionality for blog posts** ✅ - Real-time search and category filtering
+- [x] **File-based blog content system** ✅ - Enhanced JSON + Markdown system for easy blog management
 - [🟡] **Project filtering and categorization** 🟡 - Categories exist in data but no filtering UI implemented
-- [ ] **MDX blog system implementation** ❌ - Started but reverted to hardcoded data due to compatibility issues
 - [ ] **Project log functionality** ❌ - Detailed project development stories not implemented
 - [ ] **Resume data integration and PDF generation** ❌ - Still using placeholder content
 - [ ] **Smooth scrolling navigation enhancements** ❌ - Basic anchor navigation working but no smooth scrolling

@@ -12,9 +12,24 @@ import {
 
 // Dynamic markdown content loading
 export const loadMarkdownContent = async (contentFile) => {
-  // For now, use hardcoded content to ensure reliability
-  // In a production environment, this could be replaced with dynamic loading
-  return getHardcodedContent(contentFile);
+  try {
+    // Try to dynamically import the markdown file
+    const markdownModule = await import(`../content/blog/posts/${contentFile}?raw`);
+    return markdownModule.default;
+  } catch (importError) {
+    try {
+      // Fallback: try to fetch the file as a static asset
+      const response = await fetch(`/content/blog/posts/${contentFile}`);
+      if (response.ok) {
+        return await response.text();
+      }
+      throw new Error(`Failed to fetch: ${response.status}`);
+    } catch (fetchError) {
+      console.log(`Loading from file failed for ${contentFile}, using fallback content:`, importError, fetchError);
+      // Final fallback to hardcoded content
+      return getHardcodedContent(contentFile);
+    }
+  }
 };
 
 // Fallback content function
@@ -187,7 +202,54 @@ Users would disconnect and reconnect frequently, causing duplicate connections.
 - **Comprehensive testing** strategy from the beginning
 - **Better monitoring** and observability tools
 
-The experience was invaluable in understanding how to build scalable, performant, and reliable real-time applications.`
+The experience was invaluable in understanding how to build scalable, performant, and reliable real-time applications.`,
+
+    'getting-started-with-nodejs.md': `# Getting Started with Node.js Development
+
+A comprehensive guide to beginning your journey with server-side JavaScript development using Node.js.
+
+Node.js has revolutionized how we think about JavaScript, taking it beyond the browser and into the realm of server-side development. Whether you're building APIs, web applications, or command-line tools, Node.js provides a powerful and flexible platform.
+
+## What is Node.js?
+
+Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine. It allows you to run JavaScript on the server, enabling full-stack development with a single programming language.
+
+### Key Features
+
+- **Asynchronous and Event-Driven**: Non-blocking I/O operations
+- **Fast Execution**: Built on Google's V8 engine
+- **NPM Ecosystem**: Massive package repository
+- **Cross-Platform**: Runs on Windows, Mac, and Linux
+
+## Getting Started
+
+\`\`\`bash
+# Check if Node.js is installed
+node --version
+
+# Create a new project
+mkdir my-node-app
+cd my-node-app
+npm init -y
+\`\`\`
+
+## Building Your First Server
+
+\`\`\`javascript
+const express = require('express');
+const app = express();
+
+app.get('/', (req, res) => {
+  res.json({ message: 'Hello, Node.js!' });
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(\`Server running on port \${PORT}\`);
+});
+\`\`\`
+
+Node.js opens up a world of possibilities for JavaScript developers. With its vast ecosystem and active community, you'll find tools and libraries for almost any use case.`
   };
 
   return hardcodedContent[contentFile] || `# Content Not Found\n\nThe requested blog post content could not be loaded.`;

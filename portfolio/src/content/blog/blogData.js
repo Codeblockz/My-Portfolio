@@ -41,6 +41,20 @@ export const blogPosts = [
     featured: false,
     author: "Ryan",
     published: true
+  },
+  {
+    id: 4,
+    title: "Getting Started with Node.js Development",
+    slug: "getting-started-with-nodejs",
+    date: "2024-01-25",
+    category: "Technical Tutorial",
+    readTime: "15 min read",
+    excerpt: "A comprehensive guide to beginning your journey with server-side JavaScript development using Node.js.",
+    contentFile: "getting-started-with-nodejs.md",
+    tags: ["Node.js", "JavaScript", "Backend", "Express", "Tutorial"],
+    featured: true,
+    author: "Ryan",
+    published: true
   }
 ];
 
