@@ -12,24 +12,15 @@ import {
 
 // Dynamic markdown content loading
 export const loadMarkdownContent = async (contentFile) => {
-  try {
-    // Try to dynamically import the markdown file
-    const markdownModule = await import(`../content/blog/posts/${contentFile}?raw`);
-    return markdownModule.default;
-  } catch (importError) {
-    try {
-      // Fallback: try to fetch the file as a static asset
-      const response = await fetch(`/content/blog/posts/${contentFile}`);
-      if (response.ok) {
-        return await response.text();
-      }
-      throw new Error(`Failed to fetch: ${response.status}`);
-    } catch (fetchError) {
-      console.log(`Loading from file failed for ${contentFile}, using fallback content:`, importError, fetchError);
-      // Final fallback to hardcoded content
-      return getHardcodedContent(contentFile);
-    }
-  }
+  console.log(`Loading content for: ${contentFile}`);
+  
+  // For Create React App, files in src folder are not accessible via fetch
+  // and dynamic imports with ?raw don't work reliably.
+  // Using hardcoded content as the primary method ensures reliable loading
+  
+  const content = getHardcodedContent(contentFile);
+  console.log(`Successfully loaded hardcoded content for: ${contentFile}`);
+  return content;
 };
 
 // Fallback content function
