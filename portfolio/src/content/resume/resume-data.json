@@ -1,0 +1,138 @@
+{
+  "personalInfo": {
+    "name": "Ryan A. Ellis",
+    "email": "ryan.a.ellis.1@gmail.com",
+    "phone": "(831) - 241 - 1531",
+    "linkedin": "https://www.linkedin.com/in/ryan-a-ellis/",
+    "title": "Data Analyst & AI Engineer",
+    "summary": "Experienced Data Analyst with 3+ years of expertise in AI/ML solutions, statistical analysis, and automation. Proven track record of delivering measurable business impact through innovative data science applications, including 60% time reduction in classification tasks and 30% improvement in data processing efficiency. Specializes in NLP, machine learning model deployment, and enterprise automation solutions."
+  },
+  "education": [
+    {
+      "institution": "Johns Hopkins University",
+      "degree": "Master of Science",
+      "major": "Artificial Intelligence",
+      "graduationDate": "In Progress",
+      "type": "graduate"
+    },
+    {
+      "institution": "University of Maryland, Baltimore County",
+      "degree": "Bachelor of Science",
+      "major": "Computer Science",
+      "track": "Data Science",
+      "graduationDate": "December 2020",
+      "type": "undergraduate"
+    }
+  ],
+  "experience": [
+    {
+      "company": "DCI Consulting",
+      "position": "Data Analyst",
+      "startDate": "October 2021",
+      "endDate": "February 2025",
+      "duration": "3+ years",
+      "description": "Lead data analyst responsible for client data transformation, statistical analysis, and automation solutions for HR consulting firm.",
+      "achievements": [
+        "Clean and transform client data into preferred schema format for up to 20 clients simultaneously",
+        "Process datasets with over 200,000 rows for statistical analysis supporting Equal Employment Opportunity Affirmative Action Plans",
+        "Construct and maintain VBA macros for automation, achieving 25% decrease in manual data manipulation efforts",
+        "Enter data into 3 custom programs using SQL server integration",
+        "Monitor and deploy custom machine learning models for team of 6 analysts"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Census Code Classification",
+      "company": "DCI Consulting",
+      "period": "December 2023 - March 2024",
+      "type": "Machine Learning",
+      "description": "Developed a proof-of-concept NLP classification solution to classify 2018 Census Occupation codes based on Job Titles and EEO-1 Codes.",
+      "achievements": [
+        "Utilized by all analysts within company, helping identify 100s of Census Occupation Codes daily",
+        "Decreased classification time by 60% through automated solution",
+        "Explored and evaluated three approaches: GloVe embeddings, OpenAI API one-shot classification, and random forest classifier",
+        "Provided detailed cost assessments for each approach, enabling informed decision-making",
+        "Delivered starting point for software team integration into in-house software"
+      ],
+      "technologies": ["Python", "TensorFlow", "GloVe", "OpenAI API", "Jupyter Notebook", "Azure", "CI/CD"]
+    },
+    {
+      "title": "RAG Blog Chatbot",
+      "company": "DCI Consulting",
+      "period": "October 2023",
+      "type": "AI/NLP",
+      "description": "Designed proof-of-concept project for marketing team, showcasing deployment and cost benefits of chatbot integration for company blog.",
+      "achievements": [
+        "Estimated to reduce research and writing time for blogs by 20% minimum",
+        "Achieved 80% average relevance score for generated responses",
+        "Explored Hugging Face open source solutions for enhanced flexibility",
+        "Demonstrated cost-effective AI integration for content creation"
+      ],
+      "technologies": ["OpenAI API", "Chroma DB", "Langchain", "Python", "Jupyter Notebook", "Hugging Face"]
+    },
+    {
+      "title": "Excel Data Cleaning Ribbon",
+      "company": "DCI Consulting",
+      "period": "October 2021 - February 2025",
+      "type": "Automation",
+      "description": "Developed custom Excel ribbon to automate data cleaning and validation processes for individual client data across 6 HR Data analysts.",
+      "achievements": [
+        "Achieved minimum 30% reduction in processing time, leading to company-wide adoption",
+        "Transitioned personal productivity tool into enterprise solution with cross-departmental impact",
+        "Maintained comprehensive documentation including 'how to use' and 'known issues' guides",
+        "Implemented object-oriented programming techniques for enhanced modularity and maintainability",
+        "Utilized version control with GitHub for professional development practices"
+      ],
+      "technologies": ["VBA", "XML", "Excel", "Object-Oriented Programming", "GitHub", "Documentation"]
+    }
+  ],
+  "skills": {
+    "programming": [
+      "Python",
+      "C++",
+      "C#",
+      "Java",
+      "Matlab",
+      "SQL",
+      "R"
+    ],
+    "packages": [
+      "Seaborn",
+      "Keras",
+      "TensorFlow",
+      "PyTorch",
+      "pandas",
+      "scikit-learn"
+    ],
+    "machineLearning": [
+      "Statistical Analysis",
+      "Exploratory Data Analysis",
+      "Natural Language Processing (NLP)",
+      "Classification",
+      "Linear/Logistic Regression"
+    ],
+    "frameworks": [
+      "Django",
+      ".Net"
+    ],
+    "certifications": [
+      "IBM Data Science Specialization",
+      "DeepLearning.AI TensorFlow Developer"
+    ]
+  },
+  "keyAchievements": [
+    "Led development of AI solutions reducing classification time by 60% across entire analyst team",
+    "Implemented automation tools achieving 30% processing time reduction with company-wide adoption",
+    "Successfully managed data transformation for 20+ clients simultaneously with 200,000+ row datasets",
+    "Deployed and monitored custom machine learning models for team of 6 analysts",
+    "Developed enterprise-level solutions transitioning from personal tools to cross-departmental impact"
+  ],
+  "coreCompetencies": [
+    "AI/ML Model Development & Deployment",
+    "Statistical Analysis & Data Science",
+    "Automation & Process Optimization",
+    "Enterprise Software Development",
+    "Team Leadership & Cross-Functional Collaboration"
+  ]
+}
