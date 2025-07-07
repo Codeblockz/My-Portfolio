@@ -17,7 +17,8 @@
         "Dark/light theme toggle with localStorage persistence",
         "Dynamic content management with MDX support",
         "Professional UI/UX design"
-      ]
+      ],
+      "projectLog": "portfolio-website-log.md"
     },
     {
       "id": 2,
@@ -36,7 +37,8 @@
         "AI-powered conversation responses",
         "Conversation history and context management",
         "Responsive chat interface"
-      ]
+      ],
+      "projectLog": "ai-chat-application-log.md"
     },
     {
       "id": 3,
@@ -55,7 +57,8 @@
         "Project and task organization",
         "Team collaboration features",
         "RESTful API design"
-      ]
+      ],
+      "projectLog": "task-management-system-log.md"
     },
     {
       "id": 4,
