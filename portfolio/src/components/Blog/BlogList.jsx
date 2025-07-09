@@ -1,22 +1,12 @@
 import React, { useState } from 'react';
 import { getAllCategories, getCategoryInfo, searchBlogPosts } from '../../utils/contentLoader';
-import BlogPost from './BlogPost';
 
 const BlogList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedPostId, setSelectedPostId] = useState(null);
 
   const categories = getAllCategories();
   const filteredPosts = searchBlogPosts(searchTerm, selectedCategory);
-
-  const handlePostClick = (postId) => {
-    setSelectedPostId(postId);
-  };
-
-  const handleClosePost = () => {
-    setSelectedPostId(null);
-  };
 
   return (
     <section id="blog" className="py-20 bg-gray-50 dark:bg-gray-900">
@@ -70,12 +60,12 @@ const BlogList = () => {
                   </span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
-                  <button
-                    onClick={() => handlePostClick(post.id)}
-                    className="text-left w-full focus:outline-none"
-                  >
-                    {post.title}
-                  </button>
+                <a
+                  href={`/blog/${post.slug}`}
+                  className="text-left w-full hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 focus:outline-none"
+                >
+                  {post.title}
+                </a>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {post.excerpt}
@@ -88,12 +78,12 @@ const BlogList = () => {
                       day: 'numeric'
                     })}
                   </span>
-                  <button
-                    onClick={() => handlePostClick(post.id)}
-                    className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200 focus:outline-none"
-                  >
-                    Read More →
-                  </button>
+                <a
+                  href={`/blog/${post.slug}`}
+                  className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200 focus:outline-none"
+                >
+                  Read More →
+                </a>
                 </div>
               </div>
             </article>
@@ -118,13 +108,6 @@ const BlogList = () => {
         </div>
       </div>
 
-      {/* Blog Post Modal */}
-      {selectedPostId && (
-        <BlogPost
-          postId={selectedPostId}
-          onClose={handleClosePost}
-        />
-      )}
     </section>
   );
 };
