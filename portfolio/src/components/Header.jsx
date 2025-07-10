@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useTheme } from '../utils/ThemeContext';
 
 const Header = () => {
@@ -22,24 +21,24 @@ const Header = () => {
             Portfolio
           </div>
           <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a href="#home" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
               Home
-            </Link>
-            <Link to="/#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            </a>
+            <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
               Projects
-            </Link>
-            <Link to="/#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            </a>
+            <a href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
               Skills
-            </Link>
-            <Link to="/blog" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            </a>
+            <a href="#blog" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
               Blog
-            </Link>
-            <Link to="/#resume" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            </a>
+            <a href="#resume" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
               Resume
-            </Link>
-            <Link to="/#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            </a>
+            <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
               Contact
-            </Link>
+            </a>
           </div>
           <div className="flex items-center space-x-4">
             <button 
@@ -68,48 +67,48 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-200 dark:border-gray-700">
             <div className="flex flex-col space-y-4 pt-4">
-              <Link 
-                to="/" 
+              <a 
+                href="#home" 
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Home
-              </Link>
-              <Link 
-                to="/#projects" 
+              </a>
+              <a 
+                href="#projects" 
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Projects
-              </Link>
-              <Link 
-                to="/#skills" 
+              </a>
+              <a 
+                href="#skills" 
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Skills
-              </Link>
-              <Link 
-                to="/blog" 
+              </a>
+              <a 
+                href="#blog" 
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Blog
-              </Link>
-              <Link 
-                to="/#resume" 
+              </a>
+              <a 
+                href="#resume" 
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Resume
-              </Link>
-              <Link 
-                to="/#contact" 
+              </a>
+              <a 
+                href="#contact" 
                 className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
                 onClick={closeMobileMenu}
               >
                 Contact
-              </Link>
+              </a>
             </div>
           </div>
         )}
