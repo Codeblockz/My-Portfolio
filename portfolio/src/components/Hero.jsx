@@ -1,4 +1,5 @@
 import React from 'react';
+import { handleSmoothScroll } from '../utils/smoothScroll';
 
 const Hero = () => {
   return (
@@ -28,12 +29,14 @@ const Hero = () => {
             <a 
               href="#projects" 
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200 shadow-lg hover:shadow-xl"
+              onClick={(e) => handleSmoothScroll(e, 'projects')}
             >
               View My Work
             </a>
             <a 
               href="#contact" 
               className="bg-transparent border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200"
+              onClick={(e) => handleSmoothScroll(e, 'contact')}
             >
               Get In Touch
             </a>

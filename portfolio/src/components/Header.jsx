@@ -1,9 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '../utils/ThemeContext';
+import { handleSmoothScroll, getActiveSection, debounce } from '../utils/smoothScroll';
+
+const sectionIds = ['home', 'projects', 'skills', 'blog', 'resume', 'contact'];
 
 const Header = () => {
   const { isDarkMode, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -11,6 +18,57 @@ const Header = () => {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleNavClick = (event, sectionId) => {
+    event.preventDefault();
+    closeMobileMenu();
+    
+    // Check if we're on the home page
+    if (location.pathname === '/') {
+      // We're on home page, use smooth scrolling
+      handleSmoothScroll(event, sectionId);
+    } else {
+      // We're on a different page, navigate to home first
+      navigate('/');
+      
+      // Wait for navigation to complete, then scroll to section
+      setTimeout(() => {
+        const targetElement = document.getElementById(sectionId);
+        if (targetElement) {
+          const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - 80;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }, 100);
+    }
+  };
+
+  // Track active section on scroll
+  useEffect(() => {
+    const handleScroll = debounce(() => {
+      const currentSection = getActiveSection(sectionIds);
+      setActiveSection(currentSection);
+    }, 100);
+
+    window.addEventListener('scroll', handleScroll);
+    
+    // Set initial active section
+    handleScroll();
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const getLinkClassName = (sectionId) => {
+    const baseClasses = "transition-colors duration-200 font-medium";
+    const activeClasses = "text-blue-600 dark:text-blue-400";
+    const inactiveClasses = "text-gray-700 dark:text-gray-300 hover:text-blue-500 dark:hover:text-blue-400";
+    
+    return `${baseClasses} ${activeSection === sectionId ? activeClasses : inactiveClasses}`;
   };
 
   return (
@@ -21,22 +79,46 @@ const Header = () => {
             Portfolio
           </div>
           <div className="hidden md:flex space-x-8">
-            <a href="#home" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a 
+              href="#home" 
+              className={getLinkClassName('home')}
+              onClick={(e) => handleNavClick(e, 'home')}
+            >
               Home
             </a>
-            <a href="#projects" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a 
+              href="#projects" 
+              className={getLinkClassName('projects')}
+              onClick={(e) => handleNavClick(e, 'projects')}
+            >
               Projects
             </a>
-            <a href="#skills" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a 
+              href="#skills" 
+              className={getLinkClassName('skills')}
+              onClick={(e) => handleNavClick(e, 'skills')}
+            >
               Skills
             </a>
-            <a href="#blog" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a 
+              href="#blog" 
+              className={getLinkClassName('blog')}
+              onClick={(e) => handleNavClick(e, 'blog')}
+            >
               Blog
             </a>
-            <a href="#resume" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a 
+              href="#resume" 
+              className={getLinkClassName('resume')}
+              onClick={(e) => handleNavClick(e, 'resume')}
+            >
               Resume
             </a>
-            <a href="#contact" className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors">
+            <a 
+              href="#contact" 
+              className={getLinkClassName('contact')}
+              onClick={(e) => handleNavClick(e, 'contact')}
+            >
               Contact
             </a>
           </div>
@@ -69,43 +151,43 @@ const Header = () => {
             <div className="flex flex-col space-y-4 pt-4">
               <a 
                 href="#home" 
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-                onClick={closeMobileMenu}
+                className={getLinkClassName('home')}
+                onClick={(e) => handleNavClick(e, 'home')}
               >
                 Home
               </a>
               <a 
                 href="#projects" 
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-                onClick={closeMobileMenu}
+                className={getLinkClassName('projects')}
+                onClick={(e) => handleNavClick(e, 'projects')}
               >
                 Projects
               </a>
               <a 
                 href="#skills" 
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-                onClick={closeMobileMenu}
+                className={getLinkClassName('skills')}
+                onClick={(e) => handleNavClick(e, 'skills')}
               >
                 Skills
               </a>
               <a 
                 href="#blog" 
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-                onClick={closeMobileMenu}
+                className={getLinkClassName('blog')}
+                onClick={(e) => handleNavClick(e, 'blog')}
               >
                 Blog
               </a>
               <a 
                 href="#resume" 
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-                onClick={closeMobileMenu}
+                className={getLinkClassName('resume')}
+                onClick={(e) => handleNavClick(e, 'resume')}
               >
                 Resume
               </a>
               <a 
                 href="#contact" 
-                className="text-gray-700 dark:text-gray-300 hover:text-blue-500 transition-colors"
-                onClick={closeMobileMenu}
+                className={getLinkClassName('contact')}
+                onClick={(e) => handleNavClick(e, 'contact')}
               >
                 Contact
               </a>
