@@ -2,101 +2,103 @@
   "projects": [
     {
       "id": 1,
-      "title": "Portfolio Website",
-      "description": "A modern, responsive portfolio website built with React and Tailwind CSS. Features dark/light mode toggle, responsive design, and dynamic content management.",
-      "status": "active",
-      "technologies": ["React", "Tailwind CSS", "JavaScript", "MDX"],
-      "githubUrl": "https://github.com/username/portfolio",
-      "demoUrl": "https://portfolio.example.com",
-      "category": "Web Development",
+      "title": "RAG Document Chatbot",
+      "description": "Retrieval-Augmented Generation chatbot implementation for document-based conversations. Demonstrates advanced NLP techniques and vector database integration for intelligent document querying.",
+      "status": "completed",
+      "technologies": ["Python", "RAG", "NLP", "Vector Databases", "AI/ML", "Jupyter Notebook"],
+      "githubUrl": "https://github.com/Codeblockz/Data-Science-Self-Projects/tree/main/Chat%20bots",
+      "demoUrl": null,
+      "category": "AI/ML",
       "featured": true,
       "startDate": "2024-01-01",
-      "endDate": null,
+      "endDate": "2024-02-15",
       "highlights": [
-        "Responsive design with mobile-first approach",
-        "Dark/light theme toggle with localStorage persistence",
-        "Dynamic content management with MDX support",
-        "Professional UI/UX design"
+        "Implementation of Retrieval-Augmented Generation (RAG) architecture",
+        "Vector database integration for document similarity search",
+        "Advanced NLP techniques for context-aware responses",
+        "Builds on professional RAG chatbot experience from DCI Consulting"
       ],
-      "projectLog": "portfolio-website-log.md"
+      "projectLog": null
     },
     {
       "id": 2,
-      "title": "AI Chat Application",
-      "description": "Real-time chat application with AI-powered responses using OpenAI API. Features real-time messaging, conversation history, and intelligent responses.",
+      "title": "CrewAI Auto-Blogger System",
+      "description": "Multi-agent AI system for automated blog content generation using CrewAI framework. Demonstrates advanced AI orchestration and automation capabilities for content creation workflows.",
       "status": "completed",
-      "technologies": ["React", "Node.js", "OpenAI API", "Socket.io", "Express"],
-      "githubUrl": "https://github.com/username/ai-chat",
-      "demoUrl": "https://ai-chat.example.com",
+      "technologies": ["CrewAI", "Python", "AI Agents", "Content Generation", "Multi-Agent Systems", "Automation"],
+      "githubUrl": "https://github.com/Codeblockz/CrewAI_Bloger_Demo",
+      "demoUrl": null,
       "category": "AI/ML",
       "featured": true,
-      "startDate": "2023-11-15",
-      "endDate": "2024-01-10",
+      "startDate": "2024-03-01",
+      "endDate": "2024-04-15",
       "highlights": [
-        "Real-time bidirectional communication",
-        "AI-powered conversation responses",
-        "Conversation history and context management",
-        "Responsive chat interface"
+        "Multi-agent AI system architecture using CrewAI framework",
+        "Automated content generation and workflow orchestration",
+        "Advanced AI agent coordination and task distribution",
+        "Demonstrates enterprise-level automation expertise"
       ],
-      "projectLog": "ai-chat-application-log.md"
+      "projectLog": null
     },
     {
       "id": 3,
-      "title": "Task Management System",
-      "description": "Full-stack task management application with user authentication, project organization, and team collaboration features.",
-      "status": "paused",
-      "technologies": ["React", "Express", "MongoDB", "JWT", "Node.js"],
-      "githubUrl": "https://github.com/username/task-manager",
+      "title": "Ollama Chainlet Chatbot",
+      "description": "Local large language model chatbot implementation using Ollama and chainlet framework. Showcases local AI deployment capabilities and framework integration skills.",
+      "status": "completed",
+      "technologies": ["Ollama", "Chainlet", "Local LLMs", "Python", "AI Deployment", "Framework Integration"],
+      "githubUrl": "https://github.com/Codeblockz/ollama-chainlet",
       "demoUrl": null,
-      "category": "Full-Stack",
+      "category": "AI/ML",
       "featured": true,
-      "startDate": "2023-09-01",
-      "endDate": null,
+      "startDate": "2024-05-01",
+      "endDate": "2024-06-15",
       "highlights": [
-        "User authentication and authorization",
-        "Project and task organization",
-        "Team collaboration features",
-        "RESTful API design"
+        "Local LLM deployment using Ollama framework",
+        "Chainlet integration for enhanced AI capabilities",
+        "Privacy-focused local AI implementation",
+        "Framework integration and deployment optimization"
       ],
-      "projectLog": "task-management-system-log.md"
+      "projectLog": null
     },
     {
       "id": 4,
-      "title": "E-commerce Platform",
-      "description": "Modern e-commerce platform with product catalog, shopping cart, payment integration, and admin dashboard.",
+      "title": "Census Code Classification System",
+      "description": "NLP-based classification system for 2018 Census Occupation codes at DCI Consulting. Achieved 60% reduction in classification time through automated solution.",
       "status": "completed",
-      "technologies": ["React", "Node.js", "PostgreSQL", "Stripe", "Docker"],
-      "githubUrl": "https://github.com/username/ecommerce",
-      "demoUrl": "https://ecommerce.example.com",
-      "category": "Full-Stack",
+      "technologies": ["Python", "TensorFlow", "NLP", "GloVe", "OpenAI API", "Random Forest", "Azure", "CI/CD"],
+      "githubUrl": null,
+      "demoUrl": null,
+      "category": "AI/ML",
       "featured": false,
-      "startDate": "2023-06-01",
-      "endDate": "2023-08-30",
+      "startDate": "2023-12-01",
+      "endDate": "2024-03-31",
       "highlights": [
-        "Secure payment processing with Stripe",
-        "Admin dashboard with analytics",
-        "Product catalog with search and filtering",
-        "Responsive shopping cart experience"
-      ]
+        "60% reduction in classification time for analyst team",
+        "Evaluated multiple ML approaches: GloVe embeddings, OpenAI API, Random Forest",
+        "Enterprise deployment with Azure and CI/CD integration",
+        "Cost-benefit analysis and business impact assessment"
+      ],
+      "projectLog": null
     },
     {
       "id": 5,
-      "title": "Weather Analytics Dashboard",
-      "description": "Data visualization dashboard for weather patterns and climate analysis using historical weather data.",
+      "title": "Excel Data Cleaning Ribbon",
+      "description": "Custom Excel ribbon automation tool for data cleaning and validation processes. Achieved 30% processing time reduction with company-wide adoption at DCI Consulting.",
       "status": "completed",
-      "technologies": ["Python", "Flask", "D3.js", "PostgreSQL", "Chart.js"],
-      "githubUrl": "https://github.com/username/weather-dashboard",
-      "demoUrl": "https://weather-dashboard.example.com",
-      "category": "Data Science",
+      "technologies": ["VBA", "XML", "Excel", "Object-Oriented Programming", "GitHub", "Enterprise Automation"],
+      "githubUrl": null,
+      "demoUrl": null,
+      "category": "Automation",
       "featured": false,
-      "startDate": "2023-04-01",
-      "endDate": "2023-05-30",
+      "startDate": "2021-10-01",
+      "endDate": "2025-02-28",
       "highlights": [
-        "Interactive data visualizations",
-        "Historical weather data analysis",
-        "RESTful API for weather data",
-        "Responsive dashboard design"
-      ]
+        "30% reduction in data processing time with company-wide adoption",
+        "Transitioned from personal tool to enterprise solution",
+        "Object-oriented programming for enhanced modularity",
+        "Comprehensive documentation and version control practices"
+      ],
+      "projectLog": null
     }
   ]
 }

@@ -4,27 +4,27 @@ const Skills = () => {
   const skillCategories = [
     {
       title: "Programming Languages",
-      skills: ["JavaScript", "Python", "TypeScript", "Java", "C++", "Go"]
+      skills: ["Python", "C++", "C#", "Java", "Matlab", "SQL", "R"]
     },
     {
-      title: "Frameworks & Libraries",
-      skills: ["React", "Node.js", "Express", "Next.js", "Vue.js", "Django"]
+      title: "AI/ML Frameworks & Libraries",
+      skills: ["TensorFlow", "PyTorch", "Keras", "scikit-learn", "pandas", "Seaborn"]
     },
     {
-      title: "AI/ML Tools & Technologies",
-      skills: ["TensorFlow", "PyTorch", "OpenAI API", "Langchain", "Hugging Face", "Scikit-learn"]
+      title: "AI/ML Specializations",
+      skills: ["NLP", "Statistical Analysis", "Classification", "Regression", "RAG Systems", "Multi-Agent AI"]
     },
     {
-      title: "Databases",
-      skills: ["MongoDB", "PostgreSQL", "MySQL", "Redis", "Firebase", "Supabase"]
+      title: "Frameworks & Technologies",
+      skills: ["Django", ".NET", "OpenAI API", "Langchain", "Hugging Face", "CrewAI"]
     },
     {
       title: "DevOps & Tools",
-      skills: ["Docker", "Git", "GitHub Actions", "AWS", "Linux", "Nginx"]
+      skills: ["GitHub", "CI/CD", "Azure", "Jupyter Notebook", "Excel VBA", "Object-Oriented Programming"]
     },
     {
-      title: "Cloud Platforms",
-      skills: ["AWS", "Google Cloud", "Azure", "Vercel", "Netlify", "Heroku"]
+      title: "Data & Databases",
+      skills: ["SQL Server", "Vector Databases", "Chroma DB", "Data Transformation", "Statistical Analysis", "EDA"]
     }
   ];
 

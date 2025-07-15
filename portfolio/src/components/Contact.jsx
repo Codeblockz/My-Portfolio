@@ -19,7 +19,7 @@ const Contact = () => {
     e.preventDefault();
     
     try {
-      const response = await fetch('https://formspree.io/f/your-form-id', {
+      const response = await fetch('https://formspree.io/f/xgvegqad', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-gray-900 dark:text-white font-medium">Email</p>
-                      <p className="text-gray-600 dark:text-gray-300">your.email@example.com</p>
+                      <p className="text-gray-600 dark:text-gray-300">ryan.a.ellis.1@gmail.com</p>
                     </div>
                   </div>
                   <div className="flex items-center">
@@ -79,7 +79,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-gray-900 dark:text-white font-medium">LinkedIn</p>
-                      <p className="text-gray-600 dark:text-gray-300">linkedin.com/in/yourprofile</p>
+                      <p className="text-gray-600 dark:text-gray-300">linkedin.com/in/ryan-a-ellis</p>
                     </div>
                   </div>
                   <div className="flex items-center">
@@ -90,7 +90,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-gray-900 dark:text-white font-medium">GitHub</p>
-                      <p className="text-gray-600 dark:text-gray-300">github.com/yourusername</p>
+                      <p className="text-gray-600 dark:text-gray-300">github.com/Codeblockz</p>
                     </div>
                   </div>
                 </div>
