@@ -8,12 +8,14 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold mb-4">Portfolio</h3>
             <p className="text-gray-300 mb-4 max-w-md">
-              Software Developer & AI Engineer passionate about creating innovative solutions 
+              AI Engineer & Data Scientist passionate about creating innovative solutions 
               that bridge technology and human needs.
             </p>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/ryan-a-ellis/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="LinkedIn"
               >
@@ -22,7 +24,9 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://github.com/Codeblockz"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="GitHub"
               >
@@ -31,7 +35,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="mailto:ryan.a.ellis.1@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors duration-200"
                 aria-label="Email"
               >
@@ -83,7 +87,7 @@ const Footer = () => {
               </li>
               <li>
                 <span className="text-gray-400">
-                  your.email@example.com
+                  ryan.a.ellis.1@gmail.com
                 </span>
               </li>
             </ul>
@@ -92,7 +96,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center">
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Your Name. All rights reserved.
+            © {new Date().getFullYear()} Ryan Ellis. All rights reserved.
           </p>
         </div>
       </div>
