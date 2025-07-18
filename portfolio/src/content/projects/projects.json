@@ -99,6 +99,29 @@
         "Comprehensive documentation and version control practices"
       ],
       "projectLog": null
+    },
+    {
+      "id": 6,
+      "title": "Professional Portfolio Website",
+      "description": "Modern, responsive portfolio website built with React and Tailwind CSS. Features dark/light theme toggle, mobile-first design, and optimized performance. Demonstrates full-stack web development capabilities and professional presentation skills.",
+      "status": "completed",
+      "technologies": ["React", "Tailwind CSS", "JavaScript", "HTML5", "CSS3", "Responsive Design", "GitHub Pages", "Formspree"],
+      "githubUrl": "https://github.com/Codeblockz/My-Portfolio.git",
+      "demoUrl": null,
+      "category": "Web Development",
+      "featured": true,
+      "startDate": "2024-01-01",
+      "endDate": "2024-02-15",
+      "highlights": [
+        "Mobile-first responsive design with 95%+ compatibility across devices",
+        "Dark/light theme system with localStorage persistence",
+        "Professional contact form integration with Formspree",
+        "Performance optimization achieving sub-2-second load times",
+        "SEO and accessibility compliance (WCAG AA standards)",
+        "Component-based architecture with React Context API",
+        "Smooth scrolling navigation and professional UI animations"
+      ],
+      "projectLog": "portfolio-website-log.md"
     }
   ]
 }
