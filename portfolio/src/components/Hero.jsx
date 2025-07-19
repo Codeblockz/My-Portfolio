@@ -26,7 +26,7 @@ const Hero = () => {
             AI Engineer & Data Scientist
           </p>
           <p className="text-lg text-gray-700 dark:text-gray-400 mb-12 max-w-2xl mx-auto">
-            Experienced AI Engineer with 3+ years of data science and ML expertise, delivering measurable business impact through innovative solutions. Currently pursuing MS in Artificial Intelligence at Johns Hopkins University.
+            Aspiring AI Engineer with 3+ years of data science and ML expertise, delivering measurable business impact through innovative solutions. Currently pursuing MS in Artificial Intelligence at Johns Hopkins University.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
