@@ -7,8 +7,12 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="text-center max-w-4xl mx-auto">
           <div className="mb-8">
-            <div className="w-32 h-32 bg-gray-300 dark:bg-gray-700 rounded-full mx-auto mb-6 flex items-center justify-center">
-              <span className="text-4xl">👤</span>
+            <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg">
+              <img 
+                src="/ryan-headshot.jpeg" 
+                alt="Ryan Ellis - AI Engineer & Data Scientist"
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-4">
