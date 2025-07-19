@@ -10,64 +10,48 @@ import {
   getFeaturedPosts
 } from '../content/blog/blogData';
 
-// Dynamic markdown content loading
-export const loadMarkdownContent = async (contentFile) => {
-  console.log(`Loading content for: ${contentFile}`);
-  
-  // For Create React App, files in src folder are not accessible via fetch
-  // and dynamic imports with ?raw don't work reliably.
-  // Using hardcoded content as the primary method ensures reliable loading
-  
-  const content = getHardcodedContent(contentFile);
-  console.log(`Successfully loaded hardcoded content for: ${contentFile}`);
-  return content;
-};
-
-// Fallback content function
+// Blog post content mapping from src folder files
 const getHardcodedContent = (contentFile) => {
   const hardcodedContent = {
     'building-modern-web-apps.md': `# Building Modern Web Applications with React
 
 Learn the fundamentals of React and how to build scalable web applications with modern JavaScript frameworks.
 
-In this comprehensive guide, we'll explore the key concepts that make React a powerful tool for building user interfaces. We'll cover component-based architecture, state management, and best practices for creating maintainable code.
+In this post, we'll explore the key concepts that make React a powerful tool for building user interfaces. We'll cover component-based architecture, state management, and best practices for creating maintainable code.
 
 ## Why React?
 
-React has revolutionized how we build user interfaces by introducing a component-based architecture that makes code more reusable, maintainable, and easier to reason about.
+React has revolutionized how we build user interfaces by introducing a component-based architecture that makes code more reusable, maintainable, and easier to reason about. Let's dive into the core concepts that make React so powerful.
 
-### Key Benefits
+### Component-Based Architecture
 
-- **Component Reusability**: Build once, use everywhere
-- **Virtual DOM**: Optimized performance through efficient updates
-- **Large Ecosystem**: Extensive library and tool support
-- **Strong Community**: Active development and support
+React applications are built using components - self-contained pieces of code that manage their own state and render a part of the user interface. This approach offers several advantages:
 
-## Getting Started
+- **Reusability**: Components can be reused across different parts of your application
+- **Maintainability**: Each component has a single responsibility, making it easier to debug and modify
+- **Testability**: Components can be tested in isolation
+- **Scalability**: Large applications can be broken down into smaller, manageable pieces
 
 \`\`\`javascript
-import React from 'react';
-import ReactDOM from 'react-dom';
+// Example of a simple React component
+function Welcome({ name }) {
+  return <h1>Hello, {name}!</h1>;
+}
 
 function App() {
   return (
     <div>
-      <h1>Hello, React!</h1>
-      <p>Welcome to modern web development</p>
+      <Welcome name="Alice" />
+      <Welcome name="Bob" />
+      <Welcome name="Charlie" />
     </div>
   );
 }
-
-ReactDOM.render(<App />, document.getElementById('root'));
 \`\`\`
 
-## Best Practices
+### State Management
 
-1. **Keep components small and focused**
-2. **Use functional components with hooks**
-3. **Implement proper error boundaries**
-4. **Optimize performance with React.memo**
-5. **Follow consistent naming conventions**
+State is what makes React applications interactive. It represents data that can change over time and affects what the user sees on the screen.
 
 React continues to evolve with new features like Concurrent Mode and Suspense, making it an excellent choice for modern web development.`,
 
@@ -75,125 +59,52 @@ React continues to evolve with new features like Concurrent Mode and Suspense, m
 
 Exploring how artificial intelligence is transforming the way we build and interact with web applications.
 
-Artificial Intelligence is no longer a futuristic concept—it's here, and it's revolutionizing web development in ways we couldn't have imagined just a few years ago.
+Artificial Intelligence is no longer a futuristic concept—it's here, and it's revolutionizing web development in ways we couldn't have imagined just a few years ago. From intelligent code completion to automated testing, AI is becoming an integral part of the modern developer's toolkit.
 
 ## AI-Powered Development Tools
 
 ### Code Generation and Completion
 
-AI-powered code assistants like GitHub Copilot are changing how we write code:
+AI-powered code assistants like GitHub Copilot, Tabnine, and CodeWhisperer are changing how we write code. These tools can:
 
-- **Auto-complete entire functions** based on comments
+- **Auto-complete entire functions** based on comments or function signatures
 - **Generate boilerplate code** for common patterns
 - **Suggest optimizations** for existing code
 - **Translate code** between different programming languages
 
-\`\`\`javascript
-// AI can generate complex React components from simple comments
-// Create a responsive navigation with mobile menu
-function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-  
-  return (
-    <nav className="bg-blue-600 text-white">
-      {/* AI-generated navigation code */}
-    </nav>
-  );
-}
-\`\`\`
-
-## AI-Enhanced User Experiences
-
-### Personalization
-
-AI enables websites to adapt to individual users through:
-
-- **Content recommendations** based on user behavior
-- **Personalized interfaces** that adapt to user preferences
-- **Smart form completion** and validation
-- **Intelligent search** with natural language processing
-
-## The Future Landscape
-
-The integration of AI in web development is accelerating, with emerging technologies like:
-
-1. **Automated testing** with AI-generated test cases
-2. **Performance optimization** through machine learning
-3. **Accessibility improvements** powered by AI
-4. **Natural language interfaces** for better user interaction
-
-As developers, we have the opportunity to harness these technologies to create more efficient, personalized, and intelligent web applications.`,
+The AI revolution in web development is just beginning. Those who adapt and integrate these technologies thoughtfully will be well-positioned to build the next generation of web applications that are not just functional, but truly intelligent and responsive to user needs.`,
 
     'chat-app-retrospective.md': `# Project Retrospective: Chat Application
 
 A detailed look at the challenges faced and lessons learned while building a real-time chat application.
 
-Building a real-time chat application seemed straightforward at first—just send messages back and forth, right? However, as I dove deeper into the project, I discovered the complexity that lies beneath the surface.
+Building a real-time chat application seemed straightforward at first—just send messages back and forth, right? However, as I dove deeper into the project, I discovered the complexity that lies beneath the surface of what appears to be a simple feature. This retrospective covers the journey, challenges, solutions, and valuable lessons learned during the development process.
 
 ## Project Overview
 
-The goal was to build a modern, real-time chat application with:
+### The Vision
 
+The goal was to build a modern, real-time chat application with the following features:
 - **Real-time messaging** with instant delivery
 - **User authentication** and profile management
 - **Multiple chat rooms** with different topics
 - **File sharing** capabilities
 - **Message history** and search functionality
 - **Responsive design** for mobile and desktop
+- **Typing indicators** and read receipts
 
-## Technology Stack
+### Technology Stack
 
 After evaluating various options, I settled on:
-
 - **Frontend**: React with TypeScript
 - **Backend**: Node.js with Express
 - **Database**: MongoDB with Mongoose
 - **Real-time Communication**: Socket.io
 - **Authentication**: JWT with refresh tokens
+- **File Storage**: AWS S3
+- **Deployment**: Docker containers on AWS ECS
 
-## Key Challenges
-
-### Message Ordering
-
-Messages sometimes arrived out of order, especially during high-traffic periods.
-
-**Solution**: Implemented a message sequencing system to ensure proper ordering.
-
-\`\`\`javascript
-class MessageSequencer {
-  constructor() {
-    this.sequences = new Map();
-  }
-  
-  addMessage(roomId, message) {
-    const expectedSequence = this.sequences.get(roomId) + 1;
-    message.sequence = expectedSequence;
-    // Process messages in order
-  }
-}
-\`\`\`
-
-### Connection Management
-
-Users would disconnect and reconnect frequently, causing duplicate connections.
-
-**Solution**: Implemented proper connection lifecycle management with user session tracking.
-
-## Lessons Learned
-
-1. **Real-time architecture** is fundamentally different from traditional request-response
-2. **State synchronization** becomes critical in distributed systems
-3. **Error handling** must account for network interruptions
-4. **Testing strategies** for real-time applications require special consideration
-
-## What I Would Do Differently
-
-- **Microservices approach** for better scalability
-- **Event-driven architecture** for loose coupling
-- **Comprehensive testing** strategy from the beginning
-- **Better monitoring** and observability tools
-
-The experience was invaluable in understanding how to build scalable, performant, and reliable real-time applications.`,
+Building real-time applications is challenging but incredibly rewarding. The instant feedback and interaction create engaging user experiences that static applications simply can't match.`,
 
     'getting-started-with-nodejs.md': `# Getting Started with Node.js Development
 
@@ -240,10 +151,132 @@ app.listen(PORT, () => {
 });
 \`\`\`
 
-Node.js opens up a world of possibilities for JavaScript developers. With its vast ecosystem and active community, you'll find tools and libraries for almost any use case.`
+Node.js opens up a world of possibilities for JavaScript developers. With its vast ecosystem and active community, you'll find tools and libraries for almost any use case.`,
+
+    'stuff.md': `# Project Retrospective: Chat Application
+
+A detailed look at the challenges faced and lessons learned while building a real-time chat application.
+
+Building a real-time chat application seemed straightforward at first—just send messages back and forth, right? However, as I dove deeper into the project, I discovered the complexity that lies beneath the surface of what appears to be a simple feature. This retrospective covers the journey, challenges, solutions, and valuable lessons learned during the development process.
+
+## Project Overview
+
+### The Vision
+
+The goal was to build a modern, real-time chat application with the following features:
+- **Real-time messaging** with instant delivery
+- **User authentication** and profile management
+- **Multiple chat rooms** with different topics
+- **File sharing** capabilities
+- **Message history** and search functionality
+- **Responsive design** for mobile and desktop
+- **Typing indicators** and read receipts
+
+### Technology Stack
+
+After evaluating various options, I settled on:
+- **Frontend**: React with TypeScript
+- **Backend**: Node.js with Express
+- **Database**: MongoDB with Mongoose
+- **Real-time Communication**: Socket.io
+- **Authentication**: JWT with refresh tokens
+- **File Storage**: AWS S3
+- **Deployment**: Docker containers on AWS ECS
+
+## Phase 1: Foundation and Basic Messaging
+
+### Initial Implementation
+
+The first phase focused on establishing the core messaging functionality:
+
+\`\`\`javascript
+// Basic Socket.io server setup
+const io = require('socket.io')(server, {
+  cors: {
+    origin: process.env.CLIENT_URL,
+    methods: ["GET", "POST"]
+  }
+});
+
+io.on('connection', (socket) => {
+  console.log('User connected:', socket.id);
+  
+  socket.on('join-room', (roomId) => {
+    socket.join(roomId);
+    socket.to(roomId).emit('user-joined', {
+      userId: socket.userId,
+      username: socket.username
+    });
+  });
+  
+  socket.on('send-message', (data) => {
+    const message = {
+      id: generateMessageId(),
+      content: data.content,
+      userId: socket.userId,
+      username: socket.username,
+      timestamp: new Date(),
+      roomId: data.roomId
+    };
+    
+    // Save to database
+    saveMessage(message);
+    
+    // Broadcast to room
+    io.to(data.roomId).emit('new-message', message);
+  });
+  
+  socket.on('disconnect', () => {
+    console.log('User disconnected:', socket.id);
+  });
+});
+\`\`\`
+
+### Early Challenges
+
+**Challenge 1: Message Ordering**
+Messages sometimes arrived out of order, especially during high-traffic periods.
+
+**Solution**: Implemented a message sequencing system to ensure proper ordering.
+
+**Challenge 2: Connection Management**
+Users would disconnect and reconnect frequently, causing duplicate connections.
+
+**Solution**: Implemented proper connection lifecycle management with user session tracking.
+
+## Key Lessons Learned
+
+1. **Real-time architecture** is fundamentally different from traditional request-response
+2. **State synchronization** becomes critical in distributed systems
+3. **Error handling** must account for network interruptions
+4. **Testing strategies** for real-time applications require special consideration
+
+## What I Would Do Differently
+
+- **Microservices approach** for better scalability
+- **Event-driven architecture** for loose coupling
+- **Comprehensive testing** strategy from the beginning
+- **Better monitoring** and observability tools
+
+The experience was invaluable in understanding how to build scalable, performant, and reliable real-time applications.
+
+The key takeaway: **Start simple, iterate quickly, and always prioritize user experience over technical complexity**. The most elegant technical solution means nothing if users can't reliably send and receive messages.
+
+---
+
+*Building real-time applications is challenging but incredibly rewarding. The instant feedback and interaction create engaging user experiences that static applications simply can't match.*`
   };
 
   return hardcodedContent[contentFile] || `# Content Not Found\n\nThe requested blog post content could not be loaded.`;
+};
+
+// Dynamic markdown content loading
+export const loadMarkdownContent = async (contentFile) => {
+  console.log(`Loading content for: ${contentFile}`);
+  
+  const content = getHardcodedContent(contentFile);
+  console.log(`Successfully loaded content for: ${contentFile}`);
+  return content;
 };
 
 // Blog post utilities

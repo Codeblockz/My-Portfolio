@@ -38,7 +38,7 @@ Edit `portfolio/src/content/blog/blogData.js` and add a new entry to the `blogPo
 
 ```javascript
 {
-  id: 5, // Next available ID
+  id: 6, // Next available ID (current highest is 5)
   title: "My Awesome Blog Post Title",
   slug: "my-awesome-post", // URL-friendly version
   date: "2024-02-01", // Publication date (YYYY-MM-DD)
@@ -51,6 +51,31 @@ Edit `portfolio/src/content/blog/blogData.js` and add a new entry to the `blogPo
   author: "Ryan",
   published: true // Set to false for drafts
 }
+```
+
+### Step 3: Add Content to Content Loader
+Edit `portfolio/src/utils/contentLoader.js` and add your content to the `hardcodedContent` object:
+
+```javascript
+const hardcodedContent = {
+  // ... existing content
+  'my-awesome-post.md': `# My Awesome Blog Post Title
+
+Your complete blog post content here...
+
+## Section 1
+
+Content with **formatting** and code:
+
+\`\`\`javascript
+function example() {
+  return "Hello World";
+}
+\`\`\`
+
+More content here...`,
+  // ... other content
+};
 ```
 
 **That's it!** Your blog post will automatically appear on your website.
@@ -116,11 +141,11 @@ function example() {
 
 ```
 portfolio/src/content/blog/
-├── blogData.js          # Post metadata
-├── posts/
-│   ├── existing-post.md
-│   └── your-new-post.md # Your new blog post
-└── HOW-TO-ADD-BLOG-POSTS.md # This guide
+├── blogData.js                    # Post metadata
+├── HOW-TO-ADD-BLOG-POSTS.md      # This guide
+└── posts/                         # All markdown files go here
+    ├── existing-post.md
+    └── your-new-post.md           # Your new blog post
 ```
 
 ## Example: Complete Blog Post

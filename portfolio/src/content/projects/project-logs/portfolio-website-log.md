@@ -5,7 +5,7 @@ Building a modern, responsive portfolio website to showcase my skills and attrac
 
 ## Development Timeline
 
-### Phase 1: Foundation & Setup (January 1-15, 2024)
+### Phase 1: Foundation & Setup (July 1-15, 2025)
 
 #### Day 1-3: Project Planning
 **Challenge:** Choosing the right technology stack for a portfolio that needs to be professional, performant, and maintainable.

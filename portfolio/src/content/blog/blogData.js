@@ -55,6 +55,20 @@ export const blogPosts = [
     featured: true,
     author: "Ryan",
     published: true
+  },
+    {
+    id: 5,
+    title: "In-Depth Chat Application Analysis: Lessons from Production",
+    slug: "stuff",
+    date: "2024-01-25",
+    category: "Project Retrospective",
+    readTime: "25 min read",
+    excerpt: "A comprehensive technical deep-dive into building a real-time chat application, covering architecture decisions, performance optimization, testing strategies, and production lessons learned.",
+    contentFile: "stuff.md",
+    tags: ["Project Management", "Real-time", "WebSocket", "Node.js", "React", "Retrospective", "Performance", "Testing"],
+    featured: true,
+    author: "Ryan",
+    published: true
   }
 ];
 
