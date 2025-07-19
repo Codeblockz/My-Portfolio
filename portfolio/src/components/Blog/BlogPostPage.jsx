@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+// Import only the languages we actually use
+import javascript from 'react-syntax-highlighter/dist/esm/languages/hljs/javascript';
+import python from 'react-syntax-highlighter/dist/esm/languages/hljs/python';
+import bash from 'react-syntax-highlighter/dist/esm/languages/hljs/bash';
+import css from 'react-syntax-highlighter/dist/esm/languages/hljs/css';
+import json from 'react-syntax-highlighter/dist/esm/languages/hljs/json';
+
 import { getBlogPostBySlugWithContent, getRelatedPosts, getCategoryInfo } from '../../utils/contentLoader';
+
+// Register only the languages we need
+SyntaxHighlighter.registerLanguage('javascript', javascript);
+SyntaxHighlighter.registerLanguage('jsx', javascript); // JSX uses JavaScript highlighting
+SyntaxHighlighter.registerLanguage('python', python);
+SyntaxHighlighter.registerLanguage('bash', bash);
+SyntaxHighlighter.registerLanguage('css', css);
+SyntaxHighlighter.registerLanguage('json', json);
 
 const BlogPostPage = () => {
   const { slug } = useParams();

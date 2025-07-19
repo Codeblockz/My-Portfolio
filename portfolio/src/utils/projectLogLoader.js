@@ -496,6 +496,8 @@ export const loadProjectLog = async (logFileName) => {
   }
 };
 
-export default {
+const projectLogLoader = {
   loadProjectLog
 };
+
+export default projectLogLoader;
