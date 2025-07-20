@@ -10,6 +10,9 @@ import {
   getFeaturedPosts
 } from '../content/blog/blogData';
 
+// Import generated markdown content
+import { getMarkdownContent } from './generatedContent';
+
 // Blog post content mapping from src folder files
 const getHardcodedContent = (contentFile) => {
   const hardcodedContent = {
@@ -270,12 +273,91 @@ The key takeaway: **Start simple, iterate quickly, and always prioritize user ex
   return hardcodedContent[contentFile] || `# Content Not Found\n\nThe requested blog post content could not be loaded.`;
 };
 
-// Dynamic markdown content loading
+// Use webpack's require.context to automatically load all markdown files at build time
+const loadMarkdownFiles = () => {
+  const markdownFiles = {};
+  
+  try {
+    // This will bundle all .md files in the posts directory at build time
+    const context = require.context('../content/blog/posts', false, /\.md$/);
+    
+    context.keys().forEach((key) => {
+      const fileName = key.replace('./', '');
+      const module = context(key);
+      // Store the actual content - this assumes the markdown files export their content as default
+      markdownFiles[fileName] = module.default || module;
+    });
+    
+    console.log('Successfully loaded markdown files via require.context:', Object.keys(markdownFiles));
+  } catch (error) {
+    console.log('require.context not available, using fallback method');
+  }
+  
+  return markdownFiles;
+};
+
+// Pre-load all markdown files
+const preloadedMarkdownFiles = loadMarkdownFiles();
+
+// Dynamic markdown content loading with generated content priority
 export const loadMarkdownContent = async (contentFile) => {
   console.log(`Loading content for: ${contentFile}`);
   
+  // Strategy 1: Use generated markdown content (highest priority)
+  try {
+    const generatedContent = getMarkdownContent(contentFile);
+    if (generatedContent) {
+      console.log(`✅ Successfully loaded content from generated files for: ${contentFile}`);
+      return generatedContent;
+    }
+  } catch (error) {
+    console.log(`Generated content not available for: ${contentFile}`);
+  }
+  
+  // Strategy 2: Use pre-loaded files from require.context
+  if (preloadedMarkdownFiles[contentFile]) {
+    console.log(`Successfully loaded content from require.context for: ${contentFile}`);
+    return preloadedMarkdownFiles[contentFile];
+  }
+  
+  // Strategy 3: Try fetch from public folder (if files are copied there)
+  try {
+    const response = await fetch(`/blog-posts/${contentFile}`);
+    if (response.ok) {
+      const content = await response.text();
+      console.log(`Successfully fetched content from public folder for: ${contentFile}`);
+      return content;
+    }
+  } catch (fetchError) {
+    console.log(`Public folder fetch failed for: ${contentFile}`);
+  }
+  
+  // Strategy 4: Try dynamic import (some webpack configurations support this)
+  try {
+    const module = await import(`../content/blog/posts/${contentFile}`);
+    console.log(`Successfully loaded content via dynamic import for: ${contentFile}`);
+    return module.default || module;
+  } catch (importError) {
+    console.log(`Dynamic import failed for ${contentFile}`);
+  }
+  
+  // Strategy 5: Try fetch during development (webpack dev server might serve src files)
+  if (process.env.NODE_ENV === 'development') {
+    try {
+      const response = await fetch(`/src/content/blog/posts/${contentFile}`);
+      if (response.ok) {
+        const content = await response.text();
+        console.log(`Successfully fetched content in development mode for: ${contentFile}`);
+        return content;
+      }
+    } catch (fetchError) {
+      console.log(`Development fetch failed for: ${contentFile}`);
+    }
+  }
+  
+  // Ultimate fallback to existing hardcoded content
+  console.log(`⚠️ Using hardcoded fallback content for: ${contentFile}`);
   const content = getHardcodedContent(contentFile);
-  console.log(`Successfully loaded content for: ${contentFile}`);
   return content;
 };
 

@@ -1,8 +1,8 @@
 # How to Add New Blog Posts
 
-This guide shows you how to easily add new blog posts to your portfolio using the file-based content system.
+This guide shows you how to easily add new blog posts to your portfolio using the **new dynamic content system**.
 
-## Quick Start (2-Step Process)
+## 🚀 Quick Start (2-Step Process)
 
 ### Step 1: Create Your Markdown File
 Create a new `.md` file in `portfolio/src/content/blog/posts/` with your content:
@@ -53,32 +53,27 @@ Edit `portfolio/src/content/blog/blogData.js` and add a new entry to the `blogPo
 }
 ```
 
-### Step 3: Add Content to Content Loader
-Edit `portfolio/src/utils/contentLoader.js` and add your content to the `hardcodedContent` object:
+**That's it!** 🎉 Your blog post will automatically appear on your website!
 
-```javascript
-const hardcodedContent = {
-  // ... existing content
-  'my-awesome-post.md': `# My Awesome Blog Post Title
+## ✨ What's New - Dynamic Content Loading
 
-Your complete blog post content here...
+The blog system now **automatically loads content** from your markdown files! No more copying content into multiple places.
 
-## Section 1
+### How It Works Behind the Scenes
 
-Content with **formatting** and code:
+1. **Build Process**: When you run `npm start` or `npm run build`, a script automatically:
+   - Scans all `.md` files in the `posts/` directory
+   - Generates a `generatedContent.js` file with all your markdown content
+   - Makes content available to your React components
 
-\`\`\`javascript
-function example() {
-  return "Hello World";
-}
-\`\`\`
+2. **Multiple Fallback Strategies**: The system tries several methods to load content:
+   - ✅ **Generated content** (from build script) - **Primary Method**
+   - ✅ **Webpack bundling** (require.context)
+   - ✅ **Public folder** (fetch from `/blog-posts/`)
+   - ✅ **Development mode** (direct file access)
+   - ✅ **Hardcoded fallback** (legacy content as backup)
 
-More content here...`,
-  // ... other content
-};
-```
-
-**That's it!** Your blog post will automatically appear on your website.
+3. **Single Source of Truth**: Your markdown files are now the authoritative content source!
 
 ## Available Categories
 

@@ -16,11 +16,13 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run generate-content && react-scripts start",
+    "build": "npm run generate-content && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js"
+    "analyze": "npm run build && npx webpack-bundle-analyzer build/static/js/*.js",
+    "generate-content": "node scripts/generateBlogContent.js",
+    "dev": "npm run generate-content && react-scripts start"
   },
   "eslintConfig": {
     "extends": [
