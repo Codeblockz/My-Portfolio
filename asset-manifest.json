@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/My-Portfolio/static/css/main.0eaab826.css",
-    "main.js": "/My-Portfolio/static/js/main.5f5f434d.js",
-    "static/js/915.830ad9d6.chunk.js": "/My-Portfolio/static/js/915.830ad9d6.chunk.js",
+    "main.js": "/My-Portfolio/static/js/main.a41e5106.js",
+    "static/js/915.54e6d06e.chunk.js": "/My-Portfolio/static/js/915.54e6d06e.chunk.js",
     "static/js/453.5d79306b.chunk.js": "/My-Portfolio/static/js/453.5d79306b.chunk.js",
     "static/js/541.3dc1e42b.chunk.js": "/My-Portfolio/static/js/541.3dc1e42b.chunk.js",
     "static/media/CLI-Comparison-Claude-vs-Gemini.md": "/My-Portfolio/static/media/CLI-Comparison-Claude-vs-Gemini.367705b3c0535b3407b1.md",
@@ -14,13 +14,13 @@
     "static/media/stuff.md": "/My-Portfolio/static/media/stuff.6ec2adf22925fdf3e854.md",
     "index.html": "/My-Portfolio/index.html",
     "main.0eaab826.css.map": "/My-Portfolio/static/css/main.0eaab826.css.map",
-    "main.5f5f434d.js.map": "/My-Portfolio/static/js/main.5f5f434d.js.map",
-    "915.830ad9d6.chunk.js.map": "/My-Portfolio/static/js/915.830ad9d6.chunk.js.map",
+    "main.a41e5106.js.map": "/My-Portfolio/static/js/main.a41e5106.js.map",
+    "915.54e6d06e.chunk.js.map": "/My-Portfolio/static/js/915.54e6d06e.chunk.js.map",
     "453.5d79306b.chunk.js.map": "/My-Portfolio/static/js/453.5d79306b.chunk.js.map",
     "541.3dc1e42b.chunk.js.map": "/My-Portfolio/static/js/541.3dc1e42b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0eaab826.css",
-    "static/js/main.5f5f434d.js"
+    "static/js/main.a41e5106.js"
   ]
 }
