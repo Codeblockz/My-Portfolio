@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/My-Portfolio/static/css/main.0eaab826.css",
+    "main.js": "/My-Portfolio/static/js/main.5f5f434d.js",
+    "static/js/915.830ad9d6.chunk.js": "/My-Portfolio/static/js/915.830ad9d6.chunk.js",
+    "static/js/453.5d79306b.chunk.js": "/My-Portfolio/static/js/453.5d79306b.chunk.js",
+    "static/js/541.3dc1e42b.chunk.js": "/My-Portfolio/static/js/541.3dc1e42b.chunk.js",
+    "static/media/CLI-Comparison-Claude-vs-Gemini.md": "/My-Portfolio/static/media/CLI-Comparison-Claude-vs-Gemini.367705b3c0535b3407b1.md",
+    "static/media/chat-app-retrospective.md": "/My-Portfolio/static/media/chat-app-retrospective.0e91d936aa62244d310c.md",
+    "static/media/stuff 2.md": "/My-Portfolio/static/media/stuff 2.0e91d936aa62244d310c.md",
+    "static/media/future-of-ai.md": "/My-Portfolio/static/media/future-of-ai.1d2eaab093fbc7512cf2.md",
+    "static/media/building-modern-web-apps.md": "/My-Portfolio/static/media/building-modern-web-apps.4cb004971a74ee31eebb.md",
+    "static/media/getting-started-with-nodejs.md": "/My-Portfolio/static/media/getting-started-with-nodejs.dc4c5d32bde6b8ad498a.md",
+    "static/media/stuff.md": "/My-Portfolio/static/media/stuff.6ec2adf22925fdf3e854.md",
+    "index.html": "/My-Portfolio/index.html",
+    "main.0eaab826.css.map": "/My-Portfolio/static/css/main.0eaab826.css.map",
+    "main.5f5f434d.js.map": "/My-Portfolio/static/js/main.5f5f434d.js.map",
+    "915.830ad9d6.chunk.js.map": "/My-Portfolio/static/js/915.830ad9d6.chunk.js.map",
+    "453.5d79306b.chunk.js.map": "/My-Portfolio/static/js/453.5d79306b.chunk.js.map",
+    "541.3dc1e42b.chunk.js.map": "/My-Portfolio/static/js/541.3dc1e42b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0eaab826.css",
+    "static/js/main.5f5f434d.js"
+  ]
+}
