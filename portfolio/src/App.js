@@ -17,7 +17,7 @@ const BlogPostPage = React.lazy(() => import('./components/Blog/BlogPostPage'));
 function App() {
   return (
     <ThemeProvider>
-      <Router>
+      <Router basename="/My-Portfolio">
         <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
           <Header />
           <main>

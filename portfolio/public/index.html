@@ -13,14 +13,14 @@
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ryan-ellis-portfolio.github.io/" />
+    <meta property="og:url" content="https://codeblockz.github.io/My-Portfolio/" />
     <meta property="og:title" content="Ryan Ellis - Data Analyst & AI Engineer Portfolio" />
     <meta property="og:description" content="Explore my portfolio featuring AI chatbots, machine learning projects, and data analysis solutions. Johns Hopkins graduate specializing in NLP and AI automation." />
     <meta property="og:image" content="%PUBLIC_URL%/logo512.png" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://ryan-ellis-portfolio.github.io/" />
+    <meta property="twitter:url" content="https://codeblockz.github.io/My-Portfolio/" />
     <meta property="twitter:title" content="Ryan Ellis - Data Analyst & AI Engineer Portfolio" />
     <meta property="twitter:description" content="Explore my portfolio featuring AI chatbots, machine learning projects, and data analysis solutions. Johns Hopkins graduate specializing in NLP and AI automation." />
     <meta property="twitter:image" content="%PUBLIC_URL%/logo512.png" />
@@ -28,7 +28,7 @@
     <!-- Additional SEO -->
     <meta name="robots" content="index, follow" />
     <meta name="googlebot" content="index, follow" />
-    <link rel="canonical" href="https://ryan-ellis-portfolio.github.io/" />
+    <link rel="canonical" href="https://codeblockz.github.io/My-Portfolio/" />
     
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -41,10 +41,10 @@
       "name": "Ryan Ellis",
       "jobTitle": ["Data Analyst", "AI Engineer"],
       "description": "Data Analyst & AI Engineer specializing in machine learning, NLP, and data-driven solutions",
-      "url": "https://ryan-ellis-portfolio.github.io/",
+      "url": "https://codeblockz.github.io/My-Portfolio/",
       "sameAs": [
-        "https://linkedin.com/in/ryan-ellis-profile",
-        "https://github.com/ryan-ellis-github"
+        "https://linkedin.com/in/ryan-a-ellis",
+        "https://github.com/Codeblockz"
       ],
       "alumniOf": {
         "@type": "CollegeOrUniversity",
@@ -69,6 +69,30 @@
       }
     }
     </script>
+    <!-- Single Page Apps for GitHub Pages -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string,
+      // converts it back to the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which won't cause the browser to attempt to load the new url.
+      // When the single page app is loaded further down in this file,
+      // the correct url will be waiting in the browser's history for
+      // the single page app to route accordingly.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>

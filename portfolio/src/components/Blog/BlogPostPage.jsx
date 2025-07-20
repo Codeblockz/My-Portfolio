@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -209,9 +209,9 @@ const BlogPostPage = () => {
                       </span>
                     </div>
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
-                      <a href={`/blog/${relatedPost.slug}`} className="hover:underline">
+                      <Link to={`/blog/${relatedPost.slug}`} className="hover:underline">
                         {relatedPost.title}
-                      </a>
+                      </Link>
                     </h4>
                     <p className="text-gray-600 dark:text-gray-300 text-sm mb-2">
                       {relatedPost.excerpt}

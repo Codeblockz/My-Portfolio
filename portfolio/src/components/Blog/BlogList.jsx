@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { getAllCategories, getCategoryInfo, searchBlogPosts } from '../../utils/contentLoader';
 
 const BlogList = () => {
@@ -60,12 +61,12 @@ const BlogList = () => {
                   </span>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200">
-                <a
-                  href={`/blog/${post.slug}`}
+                <Link
+                  to={`/blog/${post.slug}`}
                   className="text-left w-full hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200 focus:outline-none"
                 >
                   {post.title}
-                </a>
+                </Link>
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 mb-4">
                   {post.excerpt}
@@ -78,12 +79,12 @@ const BlogList = () => {
                       day: 'numeric'
                     })}
                   </span>
-                <a
-                  href={`/blog/${post.slug}`}
+                <Link
+                  to={`/blog/${post.slug}`}
                   className="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 font-medium transition-colors duration-200 focus:outline-none"
                 >
                   Read More →
-                </a>
+                </Link>
                 </div>
               </div>
             </article>
