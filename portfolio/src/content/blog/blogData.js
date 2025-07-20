@@ -12,7 +12,7 @@ export const blogPosts = [
     tags: ["React", "JavaScript", "Web Development", "Frontend"],
     featured: true,
     author: "Ryan",
-    published: true
+    published: false
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ export const blogPosts = [
     tags: ["AI", "Machine Learning", "Web Development", "Technology"],
     featured: true,
     author: "Ryan",
-    published: true
+    published: false
   },
   {
     id: 3,
@@ -40,7 +40,7 @@ export const blogPosts = [
     tags: ["Project Management", "Real-time", "WebSocket", "Retrospective"],
     featured: false,
     author: "Ryan",
-    published: true
+    published: false
   },
   {
     id: 4,
@@ -54,7 +54,7 @@ export const blogPosts = [
     tags: ["Node.js", "JavaScript", "Backend", "Express", "Tutorial"],
     featured: true,
     author: "Ryan",
-    published: true
+    published: false
   },
     {
     id: 5,
@@ -68,14 +68,14 @@ export const blogPosts = [
     tags: ["Project Management", "Real-time", "WebSocket", "Node.js", "React", "Retrospective", "Performance", "Testing"],
     featured: true,
     author: "Ryan",
-    published: true
+    published: false
   },
       {
     id: 6,
     title: "Claude vs Gemini CLI: A Comparative Analysis",
     slug: "claude-vs-google-cli",
     date: "2025-07-20",
-    category: "Industry Thoughts",
+    category: "AI/ML Insights",
     readTime: "25 min read",
     excerpt: "The landscape of developer tooling is undergoing a significant transformation with the emergence of advanced Artificial Intelligence (AI) agents integrated directly into command-line interfaces (CLIs). ",
     contentFile: "CLI-Comparison-Claude-vs-Gemini.md",
