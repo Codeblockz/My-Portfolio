@@ -9,7 +9,7 @@ const Hero = () => {
           <div className="mb-8">
             <div className="w-32 h-32 rounded-full mx-auto mb-6 overflow-hidden shadow-lg">
               <img 
-                src="/ryan-headshot.jpeg" 
+                src="./ryan-headshot.jpeg" 
                 alt="Ryan Ellis - AI Engineer & Data Scientist"
                 className="w-full h-full object-cover"
               />
