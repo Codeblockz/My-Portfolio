@@ -1,10 +1,11 @@
 // Project Log Content Loader
-// This utility handles loading project development logs from markdown files
+// Updated to use reliable import-based loading instead of fetch requests
 
-const projectLogs = {
-  'portfolio-website-log.md': async () => {
-    // Fallback content for Portfolio Website project log
-    return `# Portfolio Website Development Log
+import { projectLogs } from '../content/projects/project-logs/index';
+
+// Fallback hardcoded content for when files can't be loaded (kept as backup)
+const hardcodedProjectLogs = {
+  'portfolio-website-log.md': `# Portfolio Website Development Log
 
 ## Project Overview
 Building a modern, responsive portfolio website to showcase my skills and attract potential employers. The focus is on creating a professional presentation with excellent user experience.
@@ -133,11 +134,9 @@ Building a modern, responsive portfolio website to showcase my skills and attrac
 
 This portfolio project successfully demonstrates both technical capabilities and professional presentation. The development process showcased problem-solving skills, modern web development practices, and attention to user experience details that matter to potential employers.
 
-The key success factor was maintaining focus on the target audience needs while implementing clean, maintainable code architecture that can evolve with future requirements.`;
-  },
+The key success factor was maintaining focus on the target audience needs while implementing clean, maintainable code architecture that can evolve with future requirements.`,
 
-  'ai-chat-application-log.md': async () => {
-    return `# AI Chat Application Development Log
+  'ai-chat-application-log.md': `# AI Chat Application Development Log
 
 ## Project Overview
 Real-time chat application with AI-powered responses using OpenAI API. The goal was to create an intuitive chat interface that demonstrates both front-end and back-end development skills while integrating cutting-edge AI technology.
@@ -276,11 +275,9 @@ Key achievements:
 - Stable real-time communication system
 - Intelligent conversation context management
 - Professional user interface with excellent UX
-- Production-ready error handling and recovery`;
-  },
+- Production-ready error handling and recovery`,
 
-  'task-management-system-log.md': async () => {
-    return `# Task Management System Development Log
+  'task-management-system-log.md': `# Task Management System Development Log
 
 ## Project Overview
 Full-stack task management application with user authentication, project organization, and team collaboration features. This project aimed to demonstrate complete web application development skills including database design, API architecture, and team collaboration functionality.
@@ -477,18 +474,32 @@ Key achievements:
 - Scalable database architecture
 - RESTful API with proper error handling
 - Real-time collaboration features
-- Professional React application structure`;
-  }
+- Professional React application structure`
 };
 
 export const loadProjectLog = async (logFileName) => {
   try {
-    // Try to load from the projectLogs object
+    console.log(`Attempting to load project log: ${logFileName}`);
+    
+    // First attempt: Try to load from imported fetcher functions
     if (projectLogs[logFileName]) {
-      return await projectLogs[logFileName]();
+      console.log(`Found fetcher function for ${logFileName}, attempting to load...`);
+      try {
+        const content = await projectLogs[logFileName]();
+        console.log(`Successfully loaded ${logFileName} from public directory`);
+        return content;
+      } catch (fetchError) {
+        console.log(`Failed to fetch ${logFileName} from public directory, falling back...`);
+      }
     }
     
-    // If not found, return a default message
+    // Second attempt: Fall back to hardcoded content
+    if (hardcodedProjectLogs[logFileName]) {
+      console.log(`Using fallback content for ${logFileName}`);
+      return hardcodedProjectLogs[logFileName];
+    }
+    
+    // If all attempts fail, throw error
     throw new Error(`Project log ${logFileName} not found`);
   } catch (error) {
     console.error('Error loading project log:', error);

@@ -29,19 +29,38 @@ const ProjectLog = ({ projectTitle, logFileName, onClose }) => {
 
   // Simple markdown-to-HTML conversion for basic formatting
   const renderMarkdown = (markdown) => {
-    return markdown
+    if (!markdown) return '';
+    
+    let html = markdown
+      // Handle code blocks first to avoid interference
+      .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-gray-900 dark:bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto mb-4"><code>$2</code></pre>')
+      // Handle headers
       .replace(/^# (.*$)/gm, '<h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">$1</h1>')
       .replace(/^## (.*$)/gm, '<h2 class="text-2xl font-semibold text-gray-900 dark:text-white mt-8 mb-4">$1</h2>')
       .replace(/^### (.*$)/gm, '<h3 class="text-xl font-semibold text-gray-900 dark:text-white mt-6 mb-3">$1</h3>')
       .replace(/^#### (.*$)/gm, '<h4 class="text-lg font-semibold text-gray-900 dark:text-white mt-4 mb-2">$1</h4>')
+      // Handle lists
+      .replace(/^- (.*$)/gm, '<li class="text-gray-700 dark:text-gray-300 mb-1">$1</li>')
+      .replace(/^\d+\. (.*$)/gm, '<li class="text-gray-700 dark:text-gray-300 mb-1">$1</li>')
+      // Handle inline formatting
       .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-gray-900 dark:text-white">$1</strong>')
       .replace(/\*(.*?)\*/g, '<em class="italic text-gray-700 dark:text-gray-300">$1</em>')
       .replace(/`(.*?)`/g, '<code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-sm font-mono text-gray-900 dark:text-gray-100">$1</code>')
-      .replace(/^- (.*$)/gm, '<li class="text-gray-700 dark:text-gray-300 mb-1">$1</li>')
-      .replace(/^\d+\. (.*$)/gm, '<li class="text-gray-700 dark:text-gray-300 mb-1">$1</li>')
-      .replace(/\n\n/g, '</p><p class="text-gray-700 dark:text-gray-300 mb-4">')
-      .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-gray-900 dark:bg-gray-800 text-green-400 p-4 rounded-lg overflow-x-auto mb-4"><code>$2</code></pre>')
-      .replace(/\n/g, '<br>');
+      // Handle paragraphs - split by double newlines and wrap in p tags
+      .split('\n\n')
+      .map(paragraph => {
+        if (paragraph.trim()) {
+          // Don't wrap headers, lists, or code blocks in p tags
+          if (paragraph.match(/^<(h[1-6]|li|pre|ul|ol)/)) {
+            return paragraph;
+          }
+          return `<p class="text-gray-700 dark:text-gray-300 mb-4">${paragraph.replace(/\n/g, '<br>')}</p>`;
+        }
+        return '';
+      })
+      .join('');
+    
+    return html;
   };
 
   if (loading) {
@@ -107,7 +126,7 @@ const ProjectLog = ({ projectTitle, logFileName, onClose }) => {
         <div className="overflow-y-auto max-h-[80vh] p-6">
           <div 
             className="prose prose-lg max-w-none dark:prose-invert"
-            dangerouslySetInnerHTML={{ __html: `<p class="text-gray-700 dark:text-gray-300 mb-4">${renderMarkdown(logContent)}</p>` }}
+            dangerouslySetInnerHTML={{ __html: renderMarkdown(logContent) }}
           />
         </div>
 
