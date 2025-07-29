@@ -35,5 +35,16 @@ export const projectLogs = {
     } catch (error) {
       throw error;
     }
+  },
+  'resume-helper-log.md': async () => {
+    try {
+      const response = await fetch(`${process.env.PUBLIC_URL || ''}/project-logs/resume-helper-log.md`);
+      if (response.ok) {
+        return await response.text();
+      }
+      throw new Error('File not found');
+    } catch (error) {
+      throw error;
+    }
   }
 };
