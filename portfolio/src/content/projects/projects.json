@@ -122,6 +122,26 @@
         "Smooth scrolling navigation and professional UI animations"
       ],
       "projectLog": "portfolio-website-log.md"
+    },
+    {
+      "id": 7,
+      "title": "Resume Helper",
+      "description": "An application that analyzes resumes and job descriptions to provide tailored recommendations for better alignment with job requirements.",
+      "status": "active",
+      "technologies": ["React", "TypeScript", "Python", "Flask", "Docker"],
+      "githubUrl": "https://github.com/Codeblockz/resume-helper",
+      "demoUrl": null,
+      "category": "Web Development",
+      "featured": true,
+      "startDate": "2025-07-01",
+      "endDate": null,
+      "highlights": [
+        "Resume parsing with OCR and PDF support",
+        "Job description analysis algorithms",
+        "Natural language processing recommendation engine",
+        "Full-stack application with containerization"
+      ],
+      "projectLog": "resume-helper-log.md"
     }
   ]
 }
