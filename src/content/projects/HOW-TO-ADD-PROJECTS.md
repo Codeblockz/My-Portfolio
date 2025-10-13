@@ -5,7 +5,7 @@ This guide shows you how to easily add new projects to your portfolio using the 
 ## Quick Start (2-Step Process)
 
 ### Step 1: Create Your Project Entry
-Edit `portfolio/src/content/projects/projects.json` and add a new project object to the array:
+Edit `src/content/projects/projects.json` and add a new project object to the array:
 
 ```json
 {
@@ -29,10 +29,10 @@ Edit `portfolio/src/content/projects/projects.json` and add a new project object
 ```
 
 ### Step 2: Create a Development Log (Optional but Recommended)
-Create a markdown file in `portfolio/src/content/projects/project-logs/` with your project's development story.
+Create a markdown file in `src/content/projects/project-logs/` with your project's development story.
 
 ```bash
-touch portfolio/src/content/projects/project-logs/my-awesome-project-log.md
+touch src/content/projects/project-logs/my-awesome-project-log.md
 ```
 
 Write a detailed development log using the format:
@@ -144,7 +144,7 @@ Ideas for improving or expanding the project.
 
 ### Example: Simple Development Log
 
-**File: `portfolio/src/content/projects/project-logs/simple-website-log.md`**
+**File: `src/content/projects/project-logs/simple-website-log.md`**
 ```markdown
 # Simple Website Development Log
 
@@ -177,7 +177,7 @@ A basic personal website built to showcase HTML, CSS, and JavaScript skills.
 
 ### Example: Complex Development Log
 
-**File: `portfolio/src/content/projects/project-logs/ai-chat-app-log.md`**
+**File: `src/content/projects/project-logs/ai-chat-app-log.md`**
 ```markdown
 # AI Chat Application Development Log
 
@@ -275,7 +275,7 @@ Real-time chat application with AI-powered responses using OpenAI API.
 ## File Organization
 
 ```
-portfolio/src/content/projects/
+src/content/projects/
 ├── projects.json          # Project metadata array
 ├── project-logs/
 │   ├── ai-chat-application-log.md

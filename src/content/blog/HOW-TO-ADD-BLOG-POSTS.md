@@ -5,10 +5,10 @@ This guide shows you how to easily add new blog posts to your portfolio using th
 ## 🚀 Quick Start (2-Step Process)
 
 ### Step 1: Create Your Markdown File
-Create a new `.md` file in `portfolio/src/content/blog/posts/` with your content:
+Create a new `.md` file in `src/content/blog/posts/` with your content:
 
 ```bash
-touch portfolio/src/content/blog/posts/my-awesome-post.md
+touch src/content/blog/posts/my-awesome-post.md
 ```
 
 Write your blog post in standard markdown:
@@ -34,7 +34,7 @@ More content...
 ```
 
 ### Step 2: Add Metadata Entry
-Edit `portfolio/src/content/blog/blogData.js` and add a new entry to the `blogPosts` array:
+Edit `src/content/blog/blogData.js` and add a new entry to the `blogPosts` array:
 
 ```javascript
 {
@@ -135,7 +135,7 @@ function example() {
 ## File Organization
 
 ```
-portfolio/src/content/blog/
+src/content/blog/
 ├── blogData.js                    # Post metadata
 ├── HOW-TO-ADD-BLOG-POSTS.md      # This guide
 └── posts/                         # All markdown files go here
@@ -147,7 +147,7 @@ portfolio/src/content/blog/
 
 Here's a complete example:
 
-**File: `portfolio/src/content/blog/posts/docker-basics.md`**
+**File: `src/content/blog/posts/docker-basics.md`**
 ```markdown
 # Docker Basics for Web Developers
 

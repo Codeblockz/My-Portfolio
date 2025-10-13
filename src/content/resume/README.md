@@ -5,18 +5,18 @@ This resume system provides a comprehensive, data-driven approach to displaying 
 
 ## File Structure
 ```
-portfolio/src/content/resume/
+src/content/resume/
 ├── resume-data.json          # Main resume data file
 ├── README.md                 # This documentation file
 └── ...                       # Additional resume assets
 
-portfolio/src/utils/
+src/utils/
 ├── resumeLoader.js           # Resume data loading utility
 
-portfolio/src/components/
+src/components/
 ├── Resume.jsx                # Main resume component
 
-portfolio/public/
+public/
 ├── Ellis_Ryan_Resume.pdf     # Downloadable PDF version
 ```
 
@@ -113,12 +113,12 @@ Object with skill categories:
 ## Updating Resume Content
 
 ### To Update Resume Information
-1. Edit `portfolio/src/content/resume/resume-data.json`
+1. Edit `src/content/resume/resume-data.json`
 2. Modify the relevant sections (personal info, experience, projects, etc.)
 3. Save the file - changes will be reflected immediately in development
 
 ### To Update PDF Version
-1. Place new PDF file in `portfolio/public/` directory
+1. Place new PDF file in `public/` directory
 2. Name it `Ellis_Ryan_Resume.pdf` or update the link in Resume.jsx
 3. Ensure the file is accessible via the public URL
 
