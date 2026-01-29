@@ -66,12 +66,6 @@ const ProjectCard = ({ project, isActive = false }) => {
             >
               GitHub
             </a>
-            <a
-              href={project?.demoUrl || '#'}
-              className="flex-1 bg-blue-600 hover:bg-blue-700 text-white text-center py-2 px-4 rounded transition-colors duration-200"
-            >
-              Demo
-            </a>
           </div>
         </div>
       </div>
